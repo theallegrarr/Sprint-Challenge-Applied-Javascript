@@ -15,5 +15,43 @@
 //     <span>By {authors name}</span>
 //   </div>
 // </div>
+
+function createCard(data){
+    const cardDiv = document.createElement('div');
+    const headlineDiv = document.createElement('div');
+    const authorDiv = document.createElement('div');
+    const imgDiv = document.createElement('div');
+    const img = document.createElement('img');
+    const authorSpan = document.createElement('span');
+    const cardArea = document.querySelector('.cards-container');
+
+    cardDiv.classList.add('card');
+    headlineDiv.classList.add('headline');
+    authorDiv.classList.add('author');
+    imgDiv.classList.add('img-container');
+
+    headlineDiv.innerText = data.headline;
+    img.setAttribute('src', data.authorPhoto);
+    authorSpan.innerText = `By ${data.authorName}`;
+
+    cardDiv.appendChild(headlineDiv);
+    imgDiv.appendChild(img);
+    authorDiv.appendChild(imgDiv);
+    cardDiv.appendChild(authorDiv);
+    cardDiv.appendChild(authorSpan);
+    cardArea.appendChild(cardDiv);
+}
+
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles').then(response => {
+    response.data.articles.javascript.forEach(article => createCard(article));
+}).catch(e => {
+    console.log(e);
+})
+
+
+
+
+
