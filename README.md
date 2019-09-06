@@ -30,14 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The Document Object Model (DOM) represents the tree structure of an HTML document and is utilized by a programming language for accessibility and manipulation of that document
 
 2. What is an event?
 
+An event is an action taken on an HTML element, it can be a click on a link, a drag on an image, or simply selecting text
+
 3. What is an event listener?
+
+Event listeners are functions set up inside a program to execute when a specific event is triggered on an HTML element. a program can written set to change the heading on a webpage if a particular button is clicked on that web page.
 
 4. Why would we convert a NodeList into an Array?
 
+This conversion is necessary if you require all the items in that node 
+
 5. What is a component?
+
+A component is an individual HTML element in a DOM, it is reusable and can be created, manipulated and styled using a programming language
 
 ### Git Set up
 
